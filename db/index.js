@@ -1,7 +1,10 @@
 const mongoose = require("mongoose");
 
+const { DATABASE_URL, DATABASE_USER, DATABASE_PASSWORD, DATABASE_NAME } =
+  process.env;
+
 mongoose.connect(
-  "mongodb+srv://user1:user1@cluster0.zxbfd.mongodb.net/notes-db?retryWrites=true&w=majority",
+  `mongodb+srv://${DATABASE_USER}:${DATABASE_PASSWORD}@cluster0.zxbfd.mongodb.net/${DATABASE_NAME}?retryWrites=true&w=majority`,
   {
     useNewUrlParser: true,
     useUnifiedTopology: true,
