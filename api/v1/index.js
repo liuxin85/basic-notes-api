@@ -23,7 +23,7 @@ notesRouter.get("/", (request, response) => {
  */
 notesRouter.post("/", (request, response) => {
   console.log(request.body);
-  const newNote = new Note(request.body);
+  const newNote = new NoteModel(request.body);
   newNote.save().then((savedNote) => {
     response.json({
       note: savedNote,
