@@ -2,8 +2,12 @@ const express = require("express");
 const cors = require("cors");
 const app = express();
 const port = 5000;
-const { notesRouter } = require("./api/v1/index");
+
 require("./db");
+
+app.use(express.json());
+
+const { notesRouter } = require("./api/v1/index");
 
 app.use(cors());
 
